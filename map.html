@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map | Stone Age Scouts</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom map styling to ensure the map visual looks great and stands out */
+        .map-stage {
+            position: relative;
+            height: 500px;
+            background-color: #e0f2fe; /* Light blue sea background */
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #bdd7ee;
+        }
+        .uk-map-vector {
+            width: 100%;
+            height: 100%;
+            opacity: 0.85;
+        }
+        .map-marker {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background-color: #ff5a5f;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s, background-color 0.2s;
+            z-index: 5;
+        }
+        .map-marker:hover {
+            background-color: #e00007;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-row">
+            <a href="index.html" class="brand"><span class="brand-mark">??</span>Stone Age Scouts</a>
+            <button class="menu-toggle" aria-label="Toggle menu">Menu</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Megaliths.html">Megaliths</a>
+                <a href="Explore.html">Explore</a>
+                <a href="Quiz.html">Quiz</a>
+                <a href="map.html" class="active">Map</a>
+                <a href="About.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <div class="content-card">
+            <h1 class="section-title">Explore the Map</h1>
+            <p class="lead">Click a numbered marker on the map of Great Britain to discover its ancient history.</p>
+
+            <!-- Map Interface Component -->
+            <div class="map-card">
+                <div class="map-stage">
+                    <!-- Inline SVG placeholder map of Great Britain for visual location context -->
+                    <svg class="uk-map-vector" viewBox="0 0 400 600" xmlns="http://w3.org">
+                        <!-- Abstract landmass shape for Great Britain / Ireland styling -->
+                        <path d="M 230 40 C 240 30, 270 20, 250 50 C 230 80, 190 60, 180 90 C 170 120, 140 110, 130 140 C 120 170, 150 180, 160 210 C 170 240, 190 230, 210 260 C 230 290, 270 280, 260 320 C 250 360, 280 390, 270 420 C 260 450, 290 480, 310 520 C 330 560, 270 580, 240 560 C 210 540, 190 560, 160 550 C 130 540, 150 510, 180 500 C 210 490, 190 440, 170 450 C 150 460, 130 430, 150 400 C 170 370, 200 380, 210 350 C 220 320, 180 310, 190 270 C 200 230, 160 210, 150 170 C 140 130, 180 120, 190 90 Z" fill="#c2eaba" stroke="#9bc891" stroke-width="2"/>
+                        <!-- Orkney Islands shape -->
+                        <path d="M 255 25 C 265 20, 275 25, 265 35 Z" fill="#c2eaba" stroke="#9bc891" stroke-width="2"/>
+                        <!-- Outer Hebrides shape -->
+                        <path d="M 120 70 C 115 85, 125 110, 135 125 Z" fill="#c2eaba" stroke="#9bc891" stroke-width="2"/>
+                    </svg>
+
+                    <!-- Interactive Buttons placed geographically -->
+                    <!-- 4. Skara Brae (Orkney - Far North) -->
+                    <button class="map-marker" data-site="skara" style="top: 5%; left: 66%;" title="Skara Brae">4</button>
+                    
+                    <!-- 3. Callanish Stones (Isle of Lewis - Northwest Scotland) -->
+                    <button class="map-marker" data-site="callanish" style="top: 17%; left: 31%;" title="Callanish Stones">3</button>
+                    
+                    <!-- 2. Avebury (Wiltshire - South England) -->
+                    <button class="map-marker" data-site="avebury" style="top: 79%; left: 52%;" title="Avebury">2</button>
+                    
+                    <!-- 1. Stonehenge (Wiltshire - South England, slightly south of Avebury) -->
+                    <button class="map-marker" data-site="stonehenge" style="top: 84%; left: 53%;" title="Stonehenge">1</button>
+                </div>
+
+                <!-- Dynamic Info Display Panel -->
+                <div class="description-box" style="margin-top: 25px; text-align: center;">
+                    <h2 id="mapTargetTitle" class="location-tag">Pick a marker</h2>
+                    <p id="mapTargetClue">The site name and a short clue will appear here.</p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Site Footer Component -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p><strong>Stone Age Scouts</strong> - A child-friendly introduction to Britain's megalithic past.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script Attachment -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,533 @@
+/* ==========================================================================
+   1. CORE BASE STYLES
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffaf0;
+    color: #26332d;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.small {
+    font-size: 14px;
+    color: #606a65;
+}
+
+/* ==========================================================================
+   2. NAVIGATION & FOOTER (LAYOUT)
+   ========================================================================== */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #d8dfd2;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-row {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    text-decoration: none;
+    color: #26332d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.brand-mark {
+    display: inline-block;
+    background-color: #f4c45e;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 20px;
+    margin-right: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #26332d;
+    font-weight: bold;
+    padding: 8px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #f3ead5;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: #708c58;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background-color: white;
+        border: 1px solid #d8dfd2;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 20;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+.site-footer {
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #d8dfd2;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   3. UNIVERSAL CARDS & MODULES
+   ========================================================================== */
+.content-card {
+    background-color: white;
+    margin: 30px 0;
+    padding: 28px;
+    border: 1px solid #dddddd;
+    border-radius: 18px;
+}
+
+.section-title {
+    font-size: 38px;
+    margin: 0 0 10px 0;
+}
+
+.lead {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.fact-box {
+    background-color: #fff4c9;
+    border-left: 6px solid #f4c45e;
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.fact-box strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   4. HOME PAGE & GRIDS
+   ========================================================================== */
+.hero {
+    padding: 35px 0 30px 0;
+}
+
+.hero-card {
+    background-color: #708c58;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.hero-card h1 {
+    font-size: 46px;
+    margin: 15px 0 10px 0;
+}
+
+.hero-card p {
+    font-size: 20px;
+}
+
+.eyebrow {
+    background-color: #ffffff;
+    color: #4f6940;
+    padding: 7px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    margin: 25px auto 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 780px;
+    margin: 28px auto;
+}
+
+@media (max-width: 580px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.big-tile {
+    min-height: 160px;
+    text-align: center;
+    text-decoration: none;
+    color: #26332d;
+    padding: 25px;
+    border-radius: 18px;
+    border: 2px solid #d5d5d5;
+    transition: transform 0.2s element, border-color 0.2s;
+}
+
+.big-tile:hover {
+    border-color: #708c58;
+    transform: translateY(-2px);
+}
+
+.big-tile h2 {
+    margin: 10px 0 8px 0;
+}
+
+.big-tile p {
+    margin: 0;
+}
+
+.tile-megalith { background-color: #f4d57b; }
+.tile-explore  { background-color: #9ec8a7; }
+.tile-quiz     { background-color: #e7a6b2; }
+.tile-map      { background-color: #9ccfe2; }
+
+.tile-icon {
+    display: block;
+    font-size: 50px;
+}
+
+.home-bottom-links {
+    max-width: 780px;
+    margin: 10px auto 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-bottom-links a {
+    text-decoration: none;
+    color: #26332d;
+    background-color: #f3ead5;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   5. MEGALITHS & EXPLORE SECTIONS
+   ========================================================================== */
+.megalith-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .megalith-types {
+        grid-template-columns: 1fr;
+    }
+}
+
+.type-card {
+    background-color: #f7f0df;
+    padding: 15px;
+    border: 1px solid #ded6c6;
+    border-radius: 12px;
+}
+
+.type-photo img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.type-photo figcaption {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #666666;
+}
+
+.site-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .site-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.site-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.site-card-image {
+    width: 150px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.site-card h3 { margin: 0 0 6px 0; }
+.site-card p { margin-top: 0; }
+.site-card a { color: #4f6940; font-weight: bold; }
+
+/* ==========================================================================
+   6. INDIVIDUAL SITE PAGES (STONEHENGE, ETC.)
+   ========================================================================== */
+.main-content {
+    padding: 30px 0 50px 0;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.hero-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #cccccc;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.hero-photo {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .hero-photo {
+        height: 240px;
+    }
+}
+
+.description-box {
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    line-height: 1.6;
+}
+
+.location-tag {
+    color: #4f6940;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.round-actions {
+    max-width: 650px;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.round-action {
+    width: 140px;
+    height: 140px;
+    border-radius: 100px;
+    border: 2px solid #26332d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+}
+
+.round-action:active {
+    transform: scale(0.95);
+}
+
+.round-action.quiz-btn { background-color: #e7a6b2; }
+.round-action.fact-btn { background-color: #f4d57b; }
+
+.action-icon {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 4px;
+}
+
+.navigation-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.home-button {
+    display: inline-block;
+    width: 180px;
+    background-color: #708c58;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.feedback-panel {
+    display: none;
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #d8dfd2;
+    border-radius: 10px;
+}
+
+.feedback-panel.show {
+    display: block;
+}
+
+/* ==========================================================================
+   7. INTERACTIVE TEMPLATES (QUIZ & MAPS)
+   ========================================================================== */
+.quiz-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #fafafa;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.option.correct {
+    background-color: #dff2d6;
+    border-color: #6d9a59;
+    color: #2b4c1e;
+    font-weight: bold;
+}
+
+.option.wrong {
+    background-color: #f9dce2;
+    border-color: #b45c6d;
+    color: #5c1e29;
+}
+
+.quiz-summary {
+    display: none;
+    padding: 18px;
+    margin-top: 20px;
+    background-color: #f3ead5;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.quiz-summary.show {
+    display: block;
+}
+
+.badge-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.badge {
+    border: 2px dashed #708c58;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.map-card {
+    background-color: white;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 15px;
+}
+
+.map-stage {
+    position: relative;
+    height: 460px;

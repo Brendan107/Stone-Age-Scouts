@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Stone Age Scouts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-site="quiz-portal">
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="container nav-row">
+            <a href="index.html" class="brand">
+                <span class="brand-mark" aria-hidden="true">??</span> Stone Age Scouts
+            </a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="what-are-megaliths.html">Megaliths</a>
+                <a href="explore.html">Explore</a>
+                <a href="quiz.html" class="active">Quiz</a>
+                <a href="map.html">Map</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container main-content">
+        <h1 class="page-title">Stone Age Scout Quiz</h1>
+        <p class="lead" style="text-align: center;">Choose one answer for each question. Correct answers turn green straight away.</p>
+        
+        <section id="quizContainer" class="quiz-wrap" aria-live="polite">
+            <p>Loading questions...</p>
+        </section>
+
+        <section class="content-card" style="max-width: 800px; margin: 30px auto;">
+            <h2>Your Badges</h2>
+            <div id="badgeList" class="badge-row" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container small">
+            <p><strong>Stone Age Scouts</strong> - A child-friendly introduction to Britain's megalithic past.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
